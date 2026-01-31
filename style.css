@@ -1,0 +1,384 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  body {
+    font-family: 'Cursive', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffdab9;
+    /* Peach background color */
+    color: #5c5c5c;
+    /* Soft gray text color */
+  }
+  
+  header {
+    background-color: #f08080;
+    /* Light Coral header background */
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  nav {
+    background-color: #ffb6c1;
+    /* Light Pink navigation background */
+    padding: 1rem;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul li {
+    margin: 0 1.5rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #f08080;
+    /* Hover color - Light Coral */
+  }
+  
+  .section {
+    margin: 2rem;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  #timeline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .moment {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .moment img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #apology {
+    border-top: 1px solid #f08080;
+    /* Light Coral border top for Apology section */
+    padding-top: 2rem;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f08080;
+    /* Light Coral footer background */
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9rem;
+  }
+  
+  /* heart container */
+  
+  #heart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  #fixed-heart {
+    max-width: 100%;
+    height: auto;
+    display: none;
+    position: relative;
+    animation: heartbeat 1s infinite;
+    /* Add heartbeat animation */
+  }
+  
+  .heart-burst,
+  .smiley-burst {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    background-color: transparent;
+  }
+  
+  .heart-burst::before,
+  .heart-burst::after,
+  .smiley-burst::before,
+  .smiley-burst::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    background: #f08080;
+  }
+  
+  .heart-burst::before,
+  .smiley-burst::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+  
+  .heart-burst::after,
+  .smiley-burst::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
+  
+  
+  
+  
+  @keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.1);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes burst {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+  
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+  
+  @media (max-width: 600px) {
+  
+    /* Mobile styles */
+    #broken-heart {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    #fixed-heart {
+      max-width: 100%;
+      height: auto;
+      animation: none;
+      /* Disable animation on mobile */
+    }
+  }
+  
+  
+  .small-heart {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    /* Small heart color */
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    display: block;
+  }
+  
+  @keyframes rise {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  
+    100% {
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+  }
+  
+  
+  /* Add styles to hide the timeline and apology sections */
+  #timeline-section,
+  #apology-section {
+    display: none;
+  }
+  
+  
+  
+  /* intyro section
+   */
+  #intro-section {
+    background-color: #ffe4e1;
+    /* Peach color */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #800000;
+    /* Dark red */
+    border: 2px solid #ff69b4;
+    /* Hot pink */
+  }
+  
+  #intro-section p {
+    margin: 0;
+  }
+  
+  /* Add more styles as needed */
+  
+  
+  /* Styles for the "Letter from the Heart" section */
+  
+  #letter-section {
+    position: relative;
+    /* Add this line */
+    overflow: visible;
+    /* Add this line */
+    display: none;
+    /* Hide the section by default */
+    text-align: center;
+    padding: 20px;
+    background-color: #ffe6e6;
+    /* Light pink background color, you can change it */
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+  
+  #heart-container {
+    overflow: visible;
+    /* Add this line */
+    /* Add other styles for heart-container here */
+  }
+  
+  #letter-section h2 {
+    color: #ff4d4d;
+    /* Red text color, you can change it */
+  }
+  
+  #letter-section p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    color: #333;
+    /* Dark text color, you can change it */
+  }
+  
+  .falling-heart::before,
+  .falling-heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    /* makes the top part of the heart */
+    background: red;
+  }
+  
+  .falling-heart::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    /* rotates the element */
+    transform-origin: 0 100%;
+    /* defines the origin of the transformation */
+  }
+  
+  .falling-heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
+  
+  .falling-heart {
+    position: absolute;
+    top: 0;
+    /* Start from the top */
+    animation: fall 5s linear infinite;
+    /* Add the falling animation */
+  }
+  
+  @keyframes fall {
+    to {
+      transform: translateY(100vh);
+      /* Move to the bottom of the viewport */
+    }
+  }
+  
+  
+  
+  /* music
+   */
+  div {
+    text-align: center;
+    margin-top: 20px;
+    /* Adjust the margin as needed */
+  }
+  
+  #backgroundMusic {
+    display: none;
+    /* Hide the audio element initially */
+  }
+  
+  #audio-controls {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f08080;
+    /* Light Coral */
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  #audio-controls:hover {
+    background-color: #d9534f;
+    /* Darken the color on hover */
+  }
+  
+  
+  /* Add styling for the video container */
+  #video-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Style the video element */
+  video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style the video controls */
+  video::-webkit-media-controls {
+    color: white;
+    /* Set the color of the controls */
+  }
+  
+  /* Add more styles as needed */
